@@ -1,0 +1,46 @@
+h1{
+    /*font-family: 'Allura';*/
+    font-family: 'Montez', cursive; 
+    font-size: 22px;
+    color: blue;
+}
+
+h2{
+    font-family: 'Ubuntu Mono';
+    font-size: 8px;
+}
+button{
+    background-color: blue;
+    color : white;
+}
+
+/*.input-board{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }*/
+
+body{
+
+    background-image:url("../images/background.jpg");
+    background-size: cover;
+ }
+
+ 
+ .project-block{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: inline-grid;
+
+    justify-content: space-between;
+    align-content: space-between;
+    
+  }
+
+  .project_container
+  {
+    color: yellow;
+    align-content: center;
+  }
+  
