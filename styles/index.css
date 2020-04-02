@@ -1,13 +1,14 @@
 h1{
     /*font-family: 'Allura';*/
     font-family: 'Montez', cursive; 
-    font-size: 22px;
+    font-size: 32px;
     color: blue;
+    margin: unset
 }
 
 h2{
     font-family: 'Ubuntu Mono';
-    font-size: 8px;
+    font-size: 15px;
 }
 button{
     background-color: blue;
@@ -23,7 +24,7 @@ button{
 body{
 
     background-image:url("../images/background.jpg");
-    background-size: cover;
+    background-size: 1535px 800px;
  }
 
  
@@ -31,16 +32,46 @@ body{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    display: inline-grid;
-
     justify-content: space-between;
     align-content: space-between;
     
   }
 
+  .header_div1 {
+      float: left;
+  }
+
+  .header_div2{
+      float: right;
+  }
   .project_container
   {
-    color: yellow;
     align-content: center;
+    position: fixed;
+    top:50%;
+    left:42%
+  }
+
+  .submit{
+      background-color: yellow;
+      border: none;
+      padding: 10px 22px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      color: black;
+      margin: 5px;
   }
   
+  button{
+    border: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    margin: 5px
+  }
