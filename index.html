@@ -7,33 +7,82 @@
     <link rel="stylesheet" type="text/css" href="styles/index.css">
     <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
 </head>
 
 <body>
     <!-- TODO: Include all your code for the header and home page here -->
-   
-    <header>
-        <div class="project-block">
-        <div class="header_div1">
-        <h1> ScriBBler</h1>
-        <h2>Explore, Imagine, Create</h2> </div>
-        <div class="header_div2" >
-        <button>Sign Up</button>
-        <button>Sign In</button>
-        </div>
-        </div>
+    <div class="bg">
+        <header>
+            <div class="project-block">
+                <div class="header_div1">
+                    <h1> ScriBBler</h1>
+                    <h2>Explore, Imagine, Create</h2>
+                </div>
+                <div class="header_div2">
+                    <button id="myBtn" onclick="document.getElementById('myModal').style.display='block'"
+                        style="width:auto;">Sign Up</button>
+                    <button>Sign In</button>
+                </div>
+            </div>
         </header>
-    </header>
-    <div class="project_container">
-        <input type="submit" value="All Posts" class="submit">
-        <input type="submit" value="Create Post" class="submit">
+        <div class="project_container">
+            <input type="submit" value="All Posts" class="submit">
+            <input type="submit" value="Create Post" class="submit">
+        </div>
     </div>
-    <!-- <style>
-       div {
-          background-image: url('img_girl.jpg');
-        }
-        </style> -->
+
+        <!--Modal Code-->
+        <div id="myModal" class="modal">
+
+            <form class="modal-content" action="/action_page.php">
+
+                <div class="container">
+                    <div>
+                        Get Started
+                    </div>
+                    <div>
+                        <i class="fa fa-window-close" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <hr>
+                <label for="name"><b>Name</b></label><br>
+                <input type="text" placeholder="Enter your name" name="name" required><br>
+
+                <label for="username"><b>Username</b></label><br>
+                <input type="text" placeholder="Enter your username" name="username" required><br>
+
+                <label for="psw"><b>Password</b></label><br>
+                <input type="password" placeholder="Enter password" name="psw" required><br>
+
+                <label for="psw-repeat"><b>Confirm Password</b></label><br>
+                <input type="password" placeholder="Re-enter your password" name="psw-repeat" required><br>
+
+                <div class="">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
+
+        
+        <!--Display Modal Code-->
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
 </body>
 
 </html>
