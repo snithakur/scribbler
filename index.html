@@ -16,37 +16,40 @@
     <div class="bg">
         <header>
             <div class="project-block">
-                <div class="header_div1">
+                <div class="left">
                     <h1> ScriBBler</h1>
                     <h2>Explore, Imagine, Create</h2>
                 </div>
-                <div class="header_div2">
-                    <button id="myBtn" onclick="document.getElementById('myModal').style.display='block'"
+                <div class="right">
+                    <button id="signUpBtn" onclick="document.getElementById('signUpModal').style.display='block';document.getElementById('overlay').style.display='block'"
                         style="width:auto;">Sign Up</button>
-                    <button>Sign In</button>
+                    <button id="signIpBtn" onclick="document.getElementById('signInModal').style.display='block';document.getElementById('overlay1').style.display='block'"
+                        style="width:auto;">Sign In</button>
                 </div>
             </div>
         </header>
         <div class="project_container">
             <input type="submit" value="All Posts" class="submit">
-            <input type="submit" value="Create Post" class="submit">
+            <input type="submit" value="Create Post" class="submit" onclick="document.getElementById('createPostModal').style.display='block'" style="width:auto;">
         </div>
     </div>
 
-        <!--Modal Code-->
-        <div id="myModal" class="modal">
+    <div id="overlay"class="overlay"></div>
 
-            <form class="modal-content" action="/action_page.php">
+        <!--Sign UP Modal Code-->
+        <div id="signUpModal" class="modal">
+
+            <form class="modal-content" >
 
                 <div class="container">
-                    <div>
+                    <div class="project-block">
+                    <div class="left">
                         Get Started
                     </div>
-                    <div>
-                        <i class="fa fa-window-close" aria-hidden="true"></i>
+                    <div class="right">
+                        <i class="fa fa-window-close" aria-hidden="true" onclick="document.getElementById('signUpModal').style.display='none';document.getElementById('overlay').style.display='none'"></i>
                     </div>
                 </div>
-
                 <hr>
                 <label for="name"><b>Name</b></label><br>
                 <input type="text" placeholder="Enter your name" name="name" required><br>
@@ -60,29 +63,105 @@
                 <label for="psw-repeat"><b>Confirm Password</b></label><br>
                 <input type="password" placeholder="Re-enter your password" name="psw-repeat" required><br>
 
-                <div class="">
-                    <button type="submit">Sign Up</button>
-                </div>
+                <input type="button" value="Sign Up"></input>
+            </div>
             </form>
         </div>
-
         
-        <!--Display Modal Code-->
+        <!--Display Sign UP Modal Code-->
         <script>
             // Get the modal
-            var modal = document.getElementById("myModal");
-
+            var modal = document.getElementById("signUpModal");
+            var overlay = document.getElementById("overlay");
             // Get the button that opens the modal
-            var btn = document.getElementById("myBtn");
+            var btn = document.getElementById("signUpBtn");
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
+                    overlay.style.display = "none";
+                }
+            }
+        </script>
+<div id="overlay1"class="overlay1"></div>
+
+<!--Sign IN Modal Code-->
+<div id="signInModal" class="modal">
+
+    <form class="modal-content" >
+
+        <div class="container">
+        <div class="project-block">
+            <div class="left">
+                Welcome Back!
+            </div>
+            <div class="right">
+                <i class="fa fa-window-close" aria-hidden="true" onclick="document.getElementById('signInModal').style.display='none';document.getElementById('overlay1').style.display='none'"></i>
+            </div>
+        </div>
+        <hr>
+        <label for="username"><b>Username</b></label><br>
+        <input type="text" placeholder="Enter your username" name="username" required><br>
+
+        <label for="psw"><b>Password</b></label><br>
+        <input type="password" placeholder="Enter password" name="psw" required><br>
+
+        <input type="button" value="Sign In"></input>
+        
+        <label class="signInlabel"><b>Not a member?<a href="#" onclick="document.getElementById('signUpModal').style.display='block';document.getElementById('overlay').style.display='block'
+            ,document.getElementById('signInModal').style.display='none';document.getElementById('overlay1').style.display='none'"
+            style="width:auto;">Sign Up</a>
+        </label>
+    </div>
+    </form>
+</div>
+
+         <!--Display Sign In Modal Code-->
+         <script>
+            // Get the modal
+            var modal = document.getElementById("signInModal");
+            var overlay = document.getElementById("overlay1");
+            // Get the button that opens the modal
+            var btn = document.getElementById("signInBtn");
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    overlay.style.display = "none";
                 }
             }
         </script>
 
+    <div id="overlay2"class="overlay2"></div>
+
+        <!--Code for Create Post Modal-->
+            <div id="createPostModal" class="modal">
+                <form class="modal-content" >
+
+                    <div class="container">
+                        <div class="project-block">
+                        <div class="left">
+                            Pen your Post
+                        </div>
+                        <div class="right">
+                            <i class="fa fa-window-close" aria-hidden="true" onclick="document.getElementById('createPostModal').style.display='none';document.getElementById('overlay2').style.display='none'"></i>
+                        </div>
+                    </div>
+                    <hr>
+                    <label for="name"><b>Title</b></label><br>
+                    <input type="text" placeholder="Enter the title of your post" name="title" required><br>
+    
+                    <label for="username"><b>Contents</b></label><br>
+                    <input type="text" id="text" class ="mytext" placeholder="Enter the contents of your post" name="contents"  required><br>
+    
+                    <input type="button" value='Create'>
+                </div>
+                </form>
+            </div>
+
 </body>
+
 
 </html>
