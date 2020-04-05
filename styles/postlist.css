@@ -39,6 +39,10 @@ button{
    align-content: space-between;
    
  }
+ #post{
+   padding: .5em;
+   display: inline-block;
+ }
 
  .left {
      float: left;
@@ -162,6 +166,8 @@ input[type=button]{
 
 .container{
     display: grid;
+    justify-content: center;
+     align-items: center;
 }
 .row{
     display: flex;
@@ -193,7 +199,8 @@ body{
 }
 
 .content{
-    display: 75%
+    display: inline-block;
+
 }
 
 .text {
