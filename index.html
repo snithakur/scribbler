@@ -29,8 +29,8 @@
             </div>
         </header>
         <div class="project_container">
-            <input type="submit" value="All Posts" class="submit" onclick="window.location='../Scribbler/html/postslist.html'">
-            <input type="submit" value="Create Post" class="submit" onclick="document.getElementById('createPostModal').style.display='block'" style="width:auto;">
+            <input type="button" value="All Posts" class="submit" onclick="window.location='../Scribbler/html/postslist.html'">
+            <input type="button" value="Create Post" class="submit" onclick="document.getElementById('createPostModal').style.display='block'" style="width:auto;">
         </div>
     </div>
 
@@ -53,18 +53,18 @@
                 </div>
                 <hr>
                 <label for="name"><b>Name</b></label><br>
-                <input type="text" placeholder="Enter your name" name="name" required><br>
+                <input type="text" placeholder="Enter your name" name="name" required/><br>
 
                 <label for="username"><b>Username</b></label><br>
-                <input type="text" placeholder="Enter your username" name="username" required><br>
+                <input type="text" placeholder="Enter your username" name="username" required/><br>
 
                 <label for="psw"><b>Password</b></label><br>
-                <input type="password" placeholder="Enter password" name="psw" required><br>
+                <input type="password" placeholder="Enter password" name="psw" required/><br>
 
                 <label for="psw-repeat"><b>Confirm Password</b></label><br>
-                <input type="password" placeholder="Re-enter your password" name="psw-repeat" required><br>
+                <input type="password" placeholder="Re-enter your password" name="psw-repeat" required/><br>
 
-                <input type="button" value="Sign Up"></input>
+                <input type="submit" value="Sign Up"></input>
             </div>
             </form>
         </div>
@@ -103,12 +103,12 @@
         </div>
         <hr>
         <label for="username"><b>Username</b></label><br>
-        <input type="text" placeholder="Enter your username" name="username" required><br>
+        <input type="text" placeholder="Enter your username" name="username" required/><br>
 
         <label for="psw"><b>Password</b></label><br>
-        <input type="password" placeholder="Enter password" name="psw" required><br>
+        <input type="password" placeholder="Enter password" name="psw" required/><br>
 
-        <input type="button" value="Sign In"></input>
+        <input type="submit" value="Sign In"></input>
         
         <label class="signInlabel"><b>Not a member?<a href="#" onclick="document.getElementById('signUpModal').style.display='block';document.getElementById('overlay').style.display='block'
             ,document.getElementById('signInModal').style.display='none';document.getElementById('overlay1').style.display='none'"
