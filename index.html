@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/common.js"></script>
 
 </head>
 
@@ -22,11 +24,9 @@
                 </div>
                 <div class="right">
                     <button id="signUpBtn"
-                        onclick="document.getElementById('signUpModal').style.display='block';document.getElementById('overlay').style.display='block'"
-                        style="width:auto;" onclick="signUP()">Sign Up</button>
+                        onclick="openSignUpModal()">Sign Up</button>
                     <button id="signIpBtn"
-                        onclick="document.getElementById('signInModal').style.display='block';document.getElementById('overlay1').style.display='block'"
-                        style="width:auto;" obclick="signIN()">Sign In</button>
+                        onclick="openSignInModal()">Sign In</button>
                 </div>
             </div>
         </header>
@@ -34,7 +34,7 @@
             <input type="button" value="All Posts" class="submit"
                 onclick="window.location='../Scribbler/html/postslist.html'">
             <input type="button" value="Create Post" class="submit"
-                onclick="document.getElementById('createPostModal').style.display='block'" style="width:auto;">
+                onclick="openCreateModal()">
         </div>
     </div>
 
@@ -53,7 +53,7 @@
                     </div>
                     <div class="right">
                         <i class="fa fa-window-close" aria-hidden="true"
-                            onclick="document.getElementById('signUpModal').style.display='none';document.getElementById('overlay').style.display='none'"></i>
+                            onclick="closeSignUpModal()"></i>
                     </div>
                 </div>
                 <hr>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="right">
                         <i class="fa fa-window-close" aria-hidden="true"
-                            onclick="document.getElementById('signInModal').style.display='none';document.getElementById('overlay1').style.display='none'"></i>
+                            onclick="closeSignInModal()"></i>
                     </div>
                 </div>
                 <hr>
@@ -102,8 +102,7 @@
                 <input type="submit" value="Sign In"></input>
 
                 <label class="signInlabel"><b>Not a member?<a href="#"
-                            onclick="document.getElementById('signUpModal').style.display='block';document.getElementById('overlay').style.display='block'
-            ,document.getElementById('signInModal').style.display='none';document.getElementById('overlay1').style.display='none'" style="width:auto;">Sign Up</a>
+                            onclick="openSignUpModal()">Sign Up</a>
                 </label>
             </div>
         </form>
@@ -123,18 +122,18 @@
                     </div>
                     <div class="right">
                         <i class="fa fa-window-close" aria-hidden="true"
-                            onclick="document.getElementById('createPostModal').style.display='none';document.getElementById('overlay2').style.display='none'"></i>
+                            onclick="closeCreateModal()"></i>
                     </div>
                 </div>
                 <hr>
                 <label for="name"><b>Title</b></label><br>
-                <input type="text" placeholder="Enter the title of your post" name="title" required><br>
+                <input type="text" placeholder="Enter the title of your post" name="title" required/><br>
 
                 <label for="username"><b>Contents</b></label><br>
                 <input type="text" id="text" class="mytext" placeholder="Enter the contents of your post"
-                    name="contents" required><br>
+                    name="contents" required/><br>
 
-                <input type="button" value='Create'>
+                <input type="submit" value='Create'>
             </div>
         </form>
     </div>

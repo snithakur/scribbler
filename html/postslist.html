@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="../scripts/postlist.js"></script>
+    <script type="text/javascript" src="../scripts/common.js"></script>
 </head>
 
 <body>
@@ -23,11 +24,9 @@
                 </div>
                 <div class="right">
                     <button id="signUpBtn"
-                        onclick="document.getElementById('signUpModal').style.display='block';document.getElementById('overlay').style.display='block'"
-                        style="width:auto;">Sign Up</button>
+                        onclick="openSignUpModal()">Sign Up</button>
                     <button id="signIpBtn"
-                        onclick="document.getElementById('signInModal').style.display='block';document.getElementById('overlay1').style.display='block'"
-                        style="width:auto;">Sign In</button>
+                        onclick="openSignInModal()">Sign In</button>
                 </div>
             </div>
 
@@ -48,43 +47,46 @@
                     </div>
                     <div class="right">
                         <i class="fa fa-window-close" aria-hidden="true"
-                            onclick="document.getElementById('signUpModal').style.display='none';document.getElementById('overlay').style.display='none'"></i>
+                            onclick="closeSignUpModal()"></i>
                     </div>
                 </div>
                 <hr>
                 <label for="name"><b>Name</b></label><br>
-                <input type="text" placeholder="Enter your name" name="name" required/><br>
+                <input type="text" placeholder="Enter your name" name="name" required><br>
 
                 <label for="username"><b>Username</b></label><br>
-                <input type="text" placeholder="Enter your username" name="username" required/><br>
+                <input type="text" placeholder="Enter your username" name="username" required><br>
 
                 <label for="psw"><b>Password</b></label><br>
-                <input type="password" placeholder="Enter password" name="psw" required/><br>
+                <input type="password" placeholder="Enter password" name="psw" required><br>
 
                 <label for="psw-repeat"><b>Confirm Password</b></label><br>
-                <input type="password" placeholder="Re-enter your password" name="psw-repeat" required/><br>
+                <input type="password" placeholder="Re-enter your password" name="psw-repeat" required><br>
 
-                <input type="submit" value="Sign Up"></input>
+                <input type="button" value="Sign Up"></input>
             </div>
         </form>
     </div>
 
-    <!--Display Sign UP Modal Code-->
-    <script>
-        // Get the modal
-        var modal = document.getElementById("signUpModal");
-        var overlay = document.getElementById("overlay");
-        // Get the button that opens the modal
-        var btn = document.getElementById("signUpBtn");
+    <div id="deleteModal" class="modal">
+        <div class="modal-container">
+            <div class="project-block">
+            <div class="modal-content">
+                <div>
+                    <p>Are you sure you want to delete this post ?</p>
+                </div>
+                <div class="left">
+                    <button value="Yes" class="left-button" onclick="deletePost()">Yes</button>
+                </div>
+                <div class="right">
+                    <button value="No" class="right-button" onclick="closeDeleteModal()">No</button>
+                </div>
+                <input type="hidden" value="" id="postId"/>
+            </div>
+            </div>
+        </div>
+    </div>
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                overlay.style.display = "none";
-            }
-        }
-    </script>
     <div id="overlay1" class="overlay1"></div>
 
     <!--Sign IN Modal Code-->
@@ -99,42 +101,25 @@
                     </div>
                     <div class="right">
                         <i class="fa fa-window-close" aria-hidden="true"
-                            onclick="document.getElementById('signInModal').style.display='none';document.getElementById('overlay1').style.display='none'"></i>
+                            onclick="closeSignInModal()"></i>
                     </div>
                 </div>
                 <hr>
                 <label for="username"><b>Username</b></label><br>
-                <input type="text" placeholder="Enter your username" name="username" required/><br>
+                <input type="text" placeholder="Enter your username" name="username" required><br>
 
                 <label for="psw"><b>Password</b></label><br>
-                <input type="password" placeholder="Enter password" name="psw" required/><br>
+                <input type="password" placeholder="Enter password" name="psw" required><br>
 
-                <input type="submit" value="Sign In"></input>
+                <input type="button" value="Sign In"></input>
 
                 <label class="signInlabel"><b>Not a member?<a href="#"
-                            onclick="document.getElementById('signUpModal').style.display='block';document.getElementById('overlay').style.display='block'
-        ,document.getElementById('signInModal').style.display='none';document.getElementById('overlay1').style.display='none'" style="width:auto;">Sign Up</a>
+                            onclick="openSignUpModal()">Sign Up</a>
                 </label>
             </div>
         </form>
     </div>
 
-    <!--Display Sign In Modal Code-->
-    <script>
-        // Get the modal
-        var modal = document.getElementById("signInModal");
-        var overlay = document.getElementById("overlay1");
-        // Get the button that opens the modal
-        var btn = document.getElementById("signInBtn");
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                overlay.style.display = "none";
-            }
-        }
-    </script>
 
     <!-- ATTENTION: The HTML code for the list of posts has been given to you. You can feel free to add/delete/modify this code. You need to write the proper CSS and JavaScript code corresponding to this page so that the result looks like the screenshots given to you in the Project Statement. -->
 
@@ -157,7 +142,7 @@
                     <div class="right">
                         <span>
                             <!-- TODO: Include Font Awesome icon for delete icon here -->
-                            <i class="fa fa-trash" aria-hidden="true" onclick="deletePost('post1')"></i>
+                            <i class="fa fa-trash" aria-hidden="true"  onclick="openDeleteModal('post1')"></i>
                         </span>
                     </div>
                    </div>
@@ -189,7 +174,7 @@
                 <div class="right">
                     <span>
                         <!-- TODO: Include Font Awesome icon for delete icon here -->
-                        <i class="fa fa-trash" aria-hidden="true" onclick="deletePost('post2')"></i>
+                        <i class="fa fa-trash" aria-hidden="true" onclick="openDeleteModal('post2')"></i>
                     </span>
                 </div>
                 </div>
@@ -219,7 +204,7 @@
                 <div class="right">
                     <span>
                         <!-- TODO: Include Font Awesome icon for delete icon here -->
-                        <i class="fa fa-trash" aria-hidden="true" onclick="deletePost('post3')"></i>
+                        <i class="fa fa-trash" aria-hidden="true" onclick="openDeleteModal('post3')"></i>
                     </span>
                 </div>
                 </div>
@@ -248,7 +233,7 @@
                 <div class="right">
                     <span>
                         <!-- TODO: Include Font Awesome icon for delete icon here -->
-                        <i class="fa fa-trash" aria-hidden="true" onclick="deletePost('post4')"></i>
+                        <i class="fa fa-trash" aria-hidden="true" onclick="openDeleteModal('post4')"></i>
                     </span>
                 </div>
                 </div>
@@ -283,7 +268,7 @@
                 <div class="right">
                     <span>
                         <!-- TODO: Include Font Awesome icon for delete icon here -->
-                        <i class="fa fa-trash" aria-hidden="true" onclick="deletePost('post5')"></i>
+                        <i class="fa fa-trash" aria-hidden="true" onclick="openDeleteModal('post5')"></i>
                     </span>
                 </div>
 
